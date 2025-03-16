@@ -1,0 +1,46 @@
+:root {
+  --primary: #990000; /* Deep red from logo */
+  --secondary: #333333; /* Dark gray */
+  --accent: #D4AF37; /* Gold from logo */
+  --background: #f5f5f5; /* Light gray */
+  --text: #333333; /* Dark gray for text */
+  --foreground-rgb: 51, 51, 51;
+  --background-start-rgb: 245, 245, 245;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-[#990000] text-white font-bold py-2 px-4 rounded hover:bg-opacity-90 transition-all;
+  }
+  
+  .btn-secondary {
+    @apply bg-[#333333] text-white font-bold py-2 px-4 rounded hover:bg-opacity-90 transition-all;
+  }
+  
+  .btn-accent {
+    @apply bg-[#D4AF37] text-white font-bold py-2 px-4 rounded hover:bg-opacity-90 transition-all;
+  }
+  
+  .section-title {
+    @apply text-3xl font-bold mb-6 text-[#990000];
+  }
+  
+  .card {
+    @apply bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-all;
+  }
+}
